@@ -219,5 +219,128 @@
     </table>
     <br>
 
+
+
+
+    <!-- 12. 다른 곳으로 링크 https://www.yalco.kr/@html-css/1-7/ -->
+    <h2>12. 다른 곳으로 링크</h2>
+    
+    <!-- 
+    - 페이지 이동하지 않고 열기 : _self
+    - 새 창 열기 : _blank 
+    -->
+    <a href="https://www.koreanair.com/" target="_blank">대한항공 홈페이지 (새 창에서)</a>
+    <br><br>
+
+    <a href="https://www.yalco.kr" ,="" target="_blank">
+      <img 
+        src="https://showcases.yalco.kr/html-css/01-07/yalco-logo.png" 
+        alt="얄코 사이트로 (새 탭에서)"
+      >
+    </a>
+    <br>
+
+    <a href="#target_15">타깃으로 이동</a>
+    <!-- #건너뛰고자 하는 목적지 -->
+    <!-- p#target_${id:target_$}*20 -->
+    <p id="target_1">id:target_1</p>
+    <p id="target_2">id:target_2</p>
+    <p id="target_3">id:target_3</p>
+    <p id="target_4">id:target_4</p>
+    <p id="target_5">id:target_5</p>
+    <p id="target_6">id:target_6</p>
+    <p id="target_7">id:target_7</p>
+    <p id="target_8">id:target_8</p>
+    <p id="target_9">id:target_9</p>
+    <p id="target_10">id:target_10</p>
+    <p id="target_11">id:target_11</p>
+    <p id="target_12">id:target_12</p>
+    <p id="target_13">id:target_13</p>
+    <p id="target_14">id:target_14</p>
+    <p id="target_15">id:target_15</p>
+    <p id="target_16">id:target_16</p>
+    <p id="target_17">id:target_17</p>
+    <p id="target_18">id:target_18</p>
+    <p id="target_19">id:target_19</p>
+    <p id="target_20">id:target_20</p>
+    <br>
+
+      <address>
+      웹사이트 주소: <a href="https://www.koreanair.com/">koreanair.com</a> <br>
+      오피스: 서울특별시 강서구 하늘길 260(공항동) <br>
+      전화 <a href="tel:010-1234-5678">010-1234-5678</a> <br>
+      이메일: <a href="mailto:yekim.ux@gmail.com">yekim.ux@gmail.com</a>
+  </address> 
+  <br><br>
+
+
+
+
+  <!-- 13. 사용자로부터 입력 받기 1 https://www.yalco.kr/@html-css/1-8/-->
+  <h2>13. 사용자로부터 입력 받기</h2>
+    <form
+      action="./01-result.html"
+      method="get"
+    >
+
+    <label for="name">이름</label>
+    <input id="name" name="my-name" type="text">
+    <br><br>
+
+    <label for="age">나이</label>
+    <input id="age" name="my-age" type="number">
+    <br><br>
+
+    <button type="submit">제출</button>
+    <button type="reset">초기화</button>
+    <button type="button">버튼</button>
+    </button>
+  </form> 
+  <br>
+
+  <!-- 
+  - fieldset : 여러 input을 묶을 때 사용하며, CSS로 수정 가능. field set 뒤에 바로 disabled를 적으면 포함된 input이 모두 비활성화됨.
+  - legend : 생략 가능하며, 묶은 field의 제목을 지정할 때 사용.
+  -->
+  <form>
+    <fieldset>
+      <legend>반장</legend>
+
+      <label for="name_1">이름</label>
+      <input id="name_1" name="name_1" type="text">
+      <br><br>
+
+      <label for="age_2">나이</label>
+      <input id="age_1" name="age_1" type="number">
+
+    </fieldset>
+    <br>
+
+
+    <fieldset>
+      <legend>부반장</legend> 
+
+      <label for="name_2">이름</label>
+      <input id="name_2" name="name_2" type="text">
+      <br><br>
+
+      <label for="age_2">나이</label>
+      <input id="age_2" name="age_2" type="number">
+
+    </fieldset>
+    <br>
+
+    <fieldset disabled>
+      <legend>서기</legend>
+
+      <label for="name_3">이름</label>
+      <input id="name_3" name="name_3" type="text">
+      <br><br>
+
+      <label for="age_3">나이</label>
+      <input id="age_3" name="age_3" type="number">
+    </fieldset>
+  </form>
+
 </body>
 </html>
