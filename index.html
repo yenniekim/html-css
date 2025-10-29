@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  
   <!-- 9. 나열되는 요소들 https://www.yalco.kr/@html-css/1-4/ -->
   <!-- 목록을 표현하는 태그 -->
   <h2>9. 나열되는 요소들</h2>
@@ -340,7 +341,233 @@
       <label for="age_3">나이</label>
       <input id="age_3" name="age_3" type="number">
     </fieldset>
+  </form> <br>
+  
+
+
+
+  <!-- 14. 사용자로부터 입력 받기 2 https://www.yalco.kr/@html-css/1-9/
+  관련 자료 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input-->
+  <h2>14. 사용자로부터 입력 받기 2</h2>
+
+
+  <h3>텍스트 관련 인풋 타입</h3>
+  <form action="#">
+    <label for="textId">text</label> <br>
+    <input 
+      id="textId"
+      type="text"
+      placeholder="5자 이하"
+      maxlength="5"
+    > <br><br>
+    
+    <label for="passwordId">password</label> <br>
+    <input 
+      id="passwordId"
+      type="password"
+      placeholder="4자 이상"
+      minlength="4"
+    > <br><br>
+
+    <label for="searchId">search</label> <br>
+    <input 
+      id="searchId"
+      type="search"
+    > <br><br>
+
+    <label for="tedId">tel</label> <br>
+    <input 
+      id="telId"
+      type="tel"
+    > <br><br>
+    
+    <button type="submit">제출하기</button>
+  </form> <br>
+
+
+  <h3>숫자 관련 인풋 타입</h3>
+  <form action="3">
+    <label for="numberId">number</label>
+    <input 
+      id="numberId"
+      type="number"
+      min="0"
+      max="10"
+    > <br><br>
+
+    <label for="rangeId">range</label>
+    <input 
+      id="rangeId"
+      type="range"
+      min="0"
+      max="5"
+      step="1"
+    > <br><br>
+    
+    <label for="dateId">date</label>
+    <input 
+      type="date"
+      id="dateId"
+      min="2020-01-01"
+      max="2030-12-31"
+    > <br><br>
+  </form> <br>
+
+
+  <h3>체크 관련 인풋 타입</h3>
+  <h4>check box</h4>
+  <!-- checked를 붙이면 default 값을 체크가 된 상태로 유지할 수 있음. 
+  input의 id와 label의 for로 연결 필요.-->
+
+  <form action="#">
+    <input 
+      type="checkbox"
+      id="checkboxId"
+      checked
+    >
+    <label for="checkboxId">사과</label>
+    <input 
+      type="checkbox"
+      id="checkboxId_2"
+      checked
+    >
+    <label for="checkboxId_2">바나나</label>
+    <input 
+      type="checkbox"
+      id="checkboxId_3"
+      checked
+    >
+    <label for="checkboxId_3">포도</label>
   </form>
 
+  <h4>radio</h4>
+  <!-- name : 라디오 요소들을 그룹핑하는 역할.
+  value : 서버로 데이터를 보낼 때, 실제로 넘겨지는 값. -->
+  <form action="#">
+    <input 
+      type="radio"
+      name="passenger"
+      id="adultId"
+      value="adult"
+      checked
+    >
+    <label for="adultId">adult</label>
+
+        <input 
+      type="radio"
+      name="passenger"
+      id="childId"
+      value="child"
+    >
+    <label for="adultId">child</label>
+
+        <input 
+      type="radio"
+      name="passenger"
+      id="infantId"
+      value="infant"
+    >
+    <label for="adultId">infant</label>
+  </form> <br>
+
+
+  <h3>기타 인풋 타입</h3>
+  <!-- file에서 accept를 명시하지 않으면 모든 종류의 파일을 불러올 수 있음 
+  관련 문서 : https://developer.mozilla.org/ko/docs/Web/HTML/Reference/Elements/input/file#%EA%B3%A0%EC%9C%A0_%ED%8C%8C%EC%9D%BC_%EC%9C%A0%ED%98%95_%EC%A7%80%EC%A0%95%EC%9E%90-->
+
+  <form action="#">
+    <label for="fileId">file</label>
+    <input 
+      type="file"
+      id="fileId"
+      accept="image/png, image/jepg"
+      multiple
+    > <br><br>
+
+    <label for="hiddenId">hidden</label>
+    <input 
+      type="hidden"
+      id="hiddenId"
+    > <br><br>
+
+    <label for="emailId">email</label>
+    <input 
+      type="email"
+      id="emailId"
+    > <br><br>
+    <button type="submit">submit</button> <br><br>
+  </form>
+
+
+  <h3>인풋 요소 공통 속성</h3>
+  <!-- value : default로 입력하는 값 -->
+  
+  <form action="#">
+    <label for="valueId">value</label>
+    <input 
+      id="valueId"
+      type="text"
+      value="지정됨"
+    > <br><br>
+
+    <label for="autofocusId">autofocus</label>
+    <input
+      id="autofocusId"
+      type="text"
+      placeholder="자동 포커스됨"
+      autofocus
+    > <br></br>
+    
+    <label for="readonlyId">readonly</label>
+    <input
+      id="readonlyId"
+      type="text"
+      value="읽기만 가능, 전송됨"
+      readonly
+    > <br><br>
+
+    <label for="requiredId">required*</label>
+    <input
+      id="requiredId"
+      type="text"
+      placeholder="필수 입력란"
+      required
+    > <br><br>
+
+    <label for="disabledId">disabled</label>
+    <input 
+      id="disabledId"
+      type="text"
+      placeholder="입력 불가, 전송 안됨"
+      disabled
+    > <br><br>
+
+    <input 
+      id="roundId"  
+      type="radio"
+      name="itinerary"
+      value="roundtrip"
+      checked
+    >
+    <label for="oneId">round trip</label>
+
+    <input 
+      id="oneId"  
+      type="radio"
+      name="itinerary"
+      value="oneway"
+    >
+    <label for="roundId">one way</label>
+
+    <input 
+      id="multiId"  
+      type="radio"
+      name="itinerary"
+      value="multicity"
+      disabled
+    >
+    <label for="multiId">multi city (disabled) </label> <br><br>
+    <button type="button">submit</button>
+  </form>
 </body>
 </html>
