@@ -346,6 +346,7 @@
 
 
 
+
   <!-- 14. 사용자로부터 입력 받기 2 https://www.yalco.kr/@html-css/1-9/
   관련 자료 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input-->
   <h2>14. 사용자로부터 입력 받기 2</h2>
@@ -567,7 +568,159 @@
       disabled
     >
     <label for="multiId">multi city (disabled) </label> <br><br>
-    <button type="button">submit</button>
-  </form>
+    <button type="button">submit</button> <br><br>
+  </form> <br>
+
+
+
+
+  <!-- 15. 사용자로부터 입력 받기 3 https://www.yalco.kr/@html-css/1-10/-->
+  <h2>15. 사용자로부터 입력 받기 3</h2>
+
+  <!-- 비교적 긴 내용의 input이 필요할 때 -->
+  <h3>textarea 태그</h3>
+  <!-- 기타 사용 가능한 속성 : https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea#attributes -->
+  <label for="msId">본인이 Best KEY MAN인 이유를 설명하세요.</label> <br>
+  <textarea 
+    name="keman" id="msId" 
+    cols="50" rows="3"
+    placeholder="최대 100자까지 작성할 수 있습니다."
+    required
+  ></textarea> <br><br><br>
+
+  
+  <h3>옵션을 사용하는 태그</h3> 
+
+  <!-- select만 하고싶을 때 -->
+  <h4>select, option 태그</h4>
+    <label for="lang">언어</label> <br>
+    <select name="code" id="lang" >
+      <option value="">-- 언어 선택 --</option>
+      <option value="html" selected>HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">자바스크립트</option>
+      <option value="ts">타입스크립트</option>
+    </select>
+
+  <!-- select option에서, 선택이 불가능한 소제목을 넣고 싶을 때-->
+  <h4>optgroup 태그</h4>
+    <label for="shopping">쇼핑 목록</label> <br>
+    <select name="market" id="shopping">
+      <optgroup label="과일">
+        <option value="f_apl">사과</option>
+        <option value="f_grp">포도</option>
+        <option value="f_org">오렌지</option>
+      </optgroup>
+      <optgroup label="채소">
+        <option value="v_crt">당근</option>
+        <option value="v_tmt">토마토</option>
+        <option value="v_ept">가지</option>
+      </optgroup>
+      <optgroup label="육류">
+        <option value="m_bef">소고기</option>
+        <option value="m_prk">돼지고기</option>
+        <option value="m_ckn">닭고기</option>
+      </optgroup>
+    </select>
+
+  <!-- input 및 select를 동시에 하고싶을 때 -->
+  <h4>datalist 태그</h4>
+    <label for="job">현재 직업</label> <br>
+    <input id="job" list="jobs">
+    <datalist id="jobs">
+      <option value="student">
+      <option value="designer">
+      <option value="publisher">
+      <option value="developer">
+    </datalist> 
+    <br><br><br>
+
+
+  <h3>정도를 표현하는 태그</h3>
+
+  <!-- javascript와 연동해서 동적으로 움직이는 값이 필요할 때 사용 -->
+  <h4>progress 태그</h4>
+    <progress
+      id="progressbar"
+      max="100"
+      value="50"
+      >
+      50%
+    </progress> 
+    <button id="prgStartBtn" type="button">시작</button>
+    <!-- progress 태그 사이에 50%를 적어주는 이유는 접근성을 준수하기 위함. 
+    스크린리더로 읽을 때 해당 값을 알 수 있어야 하기 때문. -->
+
+  <h4>meter 태그</h4>
+
+  <!-- optimum : 이상적인 값이 50일 때 -->
+  <h5>optimim이 50일 때</h5>
+  <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="50"
+    value="20">
+  </meter>
+
+    <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="50"
+    value="55">
+  </meter>
+
+    <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="50"
+    value="80">
+  </meter> <br><br>
+
+  <!-- optimum : 이상적인 값이 20일 때 -->
+  <h5>optimim이 20일 때</h5>
+  <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="20"
+    value="20">
+  </meter>
+
+    <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="20"
+    value="55">
+  </meter>
+
+    <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="20"
+    value="80">
+  </meter> <br><br>
+
+  <!-- optimum : 이상적인 값이 80일 때 -->
+  <h5>optimim이 80일 때</h5>
+  <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="80"
+    value="20">
+  </meter>
+
+    <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="80"
+    value="55">
+  </meter>
+
+    <meter 
+    min="0" max="90"
+    low="30" high="60"
+    optimum="80"
+    value="80">
+  </meter> <br><br>
+
 </body>
 </html>
