@@ -277,7 +277,7 @@
 
 
 
-  <!-- 13. 사용자로부터 입력 받기 1 https://www.yalco.kr/@html-css/1-8/-->
+  <!-- 13. 사용자로부터 입력 받기 1 https://www.yalco.kr/@html-css/1-8/ -->
   <h2>13. 사용자로부터 입력 받기</h2>
     <form
       action="./01-result.html"
@@ -347,7 +347,7 @@
 
 
 
-  <!-- 14. 사용자로부터 입력 받기 2 https://www.yalco.kr/@html-css/1-9/
+  <!-- 14. 사용자로부터 입력 받기 2 https://www.yalco.kr/@html-css/1-9/ 
   관련 자료 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input-->
   <h2>14. 사용자로부터 입력 받기 2</h2>
 
@@ -574,7 +574,7 @@
 
 
 
-  <!-- 15. 사용자로부터 입력 받기 3 https://www.yalco.kr/@html-css/1-10/-->
+  <!-- 15. 사용자로부터 입력 받기 3 https://www.yalco.kr/@html-css/1-10/ -->
   <h2>15. 사용자로부터 입력 받기 3</h2>
 
   <!-- 비교적 긴 내용의 input이 필요할 때 -->
@@ -720,7 +720,91 @@
     low="30" high="60"
     optimum="80"
     value="80">
-  </meter> <br><br>
+  </meter> <br><br><br>
 
+
+
+
+  <!-- 16. CSS로 넘어가기 전에 https://www.yalco.kr/@html-css/1-11/ -->
+  <h2>16. CSS로 넘어가기 전에</h2>
+
+  <!-- 워드 아트를 사용하는 경우를 제외하고 거의 사용하지 않는 태그 -->
+  <h3>pre 태그</h3>
+    <pre>
+pre 태그에 텍스트를 작성하면 스페이스, 탭, 엔터 등
+모든 공백 요소들이 이와 같이 화면에 그대로 적용됩니다.
+
+때문에 pre 태그는 아래의 아스키 아트(Ascii art)들처럼
+공백요소들을 적극 활용해야 하는 경우 유용하게 사용될 수 있습니다.
+
+하지만 스크린 리더는 pre 태그의 내용을 읽지 않으므로
+접근성을 위해 추가적인 조치가 필요하죠.
+이 부분은 HTML 심화편에서 다루겠습니다.
+
+  </pre>
+
+  <pre>
+    ,d888a                          ,d88888888888ba.  ,88"I)   d
+  a88']8i                         a88".8"8)   `"8888:88  " _a8'
+.d8P' PP                        .d8P'.8  d)      "8:88:baad8P'
+,d8P' ,ama,   .aa,  .ama.g ,mmm  d8P' 8  .8'        88):888P'
+,d88' d8[ "8..a8"88 ,8I"88[ I88' d88   ]IaI"        d8[         
+a88' dP "bm8mP8'(8'.8I  8[      d88'    `"         .88          
+,88I ]8'  .d'.8     88' ,8' I[  ,88P ,ama    ,ama,  d8[  .ama.g
+[88' I8, .d' ]8,  ,88B ,d8 aI   (88',88"8)  d8[ "8. 88 ,8I"88[
+]88  `888P'  `8888" "88P"8m"    I88 88[ 8[ dP "bm8m88[.8I  8[
+]88,          _,,aaaaaa,_       I88 8"  8 ]P'  .d' 88 88' ,8' I[
+`888a,.  ,aadd88888888888bma.   )88,  ,]I I8, .d' )88a8B ,d8 aI
+"888888PP"'        `8""""""8   "888PP'  `888P'  `88P"88P"8m"
+  </pre>
+
+  <!-- clickjacking 등 웹사이트 안에 전체 웹사이트를 풀로 채울 수 있는 기능을 가지고 있어서 보안상 위험함.
+  따라서 google과 같은 사이트에는 iframe을 못하게 막아두는 기능을 추가함. -->
+  <h3>iframe 태그</h3>
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/ffENjt7aEdc" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+  
+  <iframe 
+    src="https://www.yalco.kr"
+    width="560" 
+    height="315"
+    frameborder="0"
+    ></iframe> <br><br>
+
+  <h3>기타 알아둘만한 태그들</h3>
+  <p>
+    kbd 태그는 <kbd>Ctrl</kbd> + <kbd>C</kbd>와 같이 키보드 입력을 나타낼 때 사용합니다.
+  </p>
+
+  <p>
+    <dfn>dfn 태그</dfn>는 특정 맥락에서 정의, 설명하고 있는 용어를 나타낼 때 사용합니다.
+  </p>
+
+  <p>
+    small 태그는 <small>이와 같이 텍스트를 작게</small> 표시하는데 사용됩니다. 
+  </p> <br><br>
+  
+  <!-- span 태그를 inline, div 태그를 block라고 함 -->
+  <h3>아무것도 하지 않는 두 태그</h3>
+  <span>span 태그 1</span>
+  <span>span 태그 2</span>
+  <span>span 태그 3</span>
+  <span>span 태그 4</span>
+  <span>span 태그 5</span>
+
+  <br><br>
+
+  <div>div 태그 1</div>
+  <div>div 태그 2</div>
+  <div>div 태그 3</div>
+  <div>div 태그 4</div>
+  <div>div 태그 5</div>
+  
 </body>
 </html>
