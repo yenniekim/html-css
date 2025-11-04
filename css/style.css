@@ -253,7 +253,7 @@ ul {
 }
 
 /* li별로 지정하는 것도 가능 */
-ul > li:first-child {
+.list-emoji ul > li:first-child {
   list-style: url(https://showcases.yalco.kr/html-css/02-03/yalco.png) 
 }
 
@@ -285,4 +285,32 @@ ol {
 
   /* 배경색 */
   background-color: #f7f7f7;
+}
+
+
+
+
+/* 21. 인라인 요소와 블럭 요소 https://www.yalco.kr/@html-css/2-5/ */
+
+/* 
+block 요소는 딱딱한 상자와도 같습니다.
+상자처럼 사각형의 형태를 갖고 있으며 너비와 높이, 안팎의 간격을 부여받을 수 있죠.
+
+inline 요소는 비닐이나 랩 안에 내용물을 넣은 것과도 같습니다. 이 텍스트처럼, 일정한 바깥 형태나 껍데기 없이 페이지의 흐름에 따라 다른 텍스트나 컨텐츠와 어우러져 배치되죠. 위의 노란 부분이 인라인 요소입니다.
+
+inline-block은 상자 안에 글자를 넣었지만 옆에 공간이 있다면 다른 친구들이 올 수 있는 박스입니다. */
+
+
+/* display 속성을 추가해서 */
+/* 이 목록을 상단바 메뉴 모습으로 바꿔보세요! */
+ul > li {
+  margin-right: 2em;
+  display: inline;
+  padding: 8px;
+}
+
+p {
+  margin: 8px;
+  display: inline-block;
+  /* display: */
 }
