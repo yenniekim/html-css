@@ -264,3 +264,25 @@ ul > li:first-child {
 ol {
   list-style: lower-alpha;
 }
+
+
+
+
+/* 20. 색 표현하기 https://www.yalco.kr/@html-css/2-4/ */
+/* 
+- keyword는 색상마다 부여된 이름으로 이 링크에서 목록을 확인할 수 있습니다.
+
+- RGB(A)는 빨강, 초록, 파랑의 광원으로 색을 혼합하는 방식이며
+끝에 알파값을 붙여서 투명도를 조절할 수 있죠.
+
+- HEX는 R, G, B, Alpha 값들을 16진수형태로 나타낸 것입니다.
+
+- HSL(A)은 색상, 채도, 명도값 그리고 알파값을 조합하여 색을 나타냅니다. */
+
+.clr-picker {
+  /* 글자색 */
+  color: #333333;
+
+  /* 배경색 */
+  background-color: #f7f7f7;
+}
