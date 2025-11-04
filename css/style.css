@@ -52,8 +52,6 @@ span, .dark, #red {
 }
 
 
-
-
 /* [2] 결합자와 가상 클래스 */
 
 
@@ -146,8 +144,8 @@ ol li:nth-child(odd):hover {
 
 
 
+
 /* 18. 글자와 텍스트 스타일 https://www.yalco.kr/@html-css/2-2/ */
-/* [3] CSS 기본 문법 */
 
 
 /* 1) font style & font weight */
@@ -227,4 +225,42 @@ HTML, CSS와 같이 대문자로 작성된 텍스트는 capitalize에 영향을 
     2px 1px plum, -2px 1px plum, 1px 2px plum, 1px -2px plum,
     2px -1px plum, -2px -1px plum, -1px 2px plum, -1px -2px plum,
     2px 2px plum, 2px -2px plum, -2px 2px plum, -2px -2px plum;
+}
+
+
+
+
+/* 19. 문단과 목록 스타일 https://www.yalco.kr/@html-css/2-3/ */
+
+/* 1) 정렬과 간격 */
+.align {
+  /* left, center, right, justify */
+  text-align: left;
+
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height: 1.5em;
+}
+
+
+/* 2) 들여쓰기 */
+.align { text-indent: 0.8em; }
+
+
+/* 3) 리스트의 표현 */
+ul {
+  list-style: circle;
+}
+
+/* li별로 지정하는 것도 가능 */
+ul > li:first-child {
+  list-style: url(https://showcases.yalco.kr/html-css/02-03/yalco.png) 
+}
+
+ul > li:first-child {
+  list-style: "⭐️ "
+}
+
+ol {
+  list-style: lower-alpha;
 }
