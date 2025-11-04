@@ -1,4 +1,6 @@
-/* 1. 기본 & 그룹 선택자 */
+/* 17. CSS 적용 방법 https://www.yalco.kr/@html-css/2-1/ */
+/* [1] 기본 & 그룹 선택자 */
+
 
 /* 모든 요소 선택 */
 * {
@@ -13,7 +15,7 @@
 
 /* 태그 선택자 */
 p {
-  color: olivedrab;
+  color: #374585;
 }
 
 /* class 선택자 .(온점)을 붙임 /
@@ -52,7 +54,8 @@ span, .dark, #red {
 
 
 
-/* 2. 결합자와 가상 클래스 */
+/* [2] 결합자와 가상 클래스 */
+
 
 /* 1) 결합자 모음 */
 /* 자손 결합자 */
@@ -78,6 +81,7 @@ span, .dark, #red {
 .starter + li {
 	font-weight: bold;
 }
+
 
 /* 2) 가상 클래스 모음 */
 /* 첫 번째, 마지막 요소 가상 클래스 */
@@ -138,4 +142,89 @@ li:hover,
 ol li:nth-child(odd):hover {
 	font-weight: bold;
 	color: blue;
+}
+
+
+
+/* 18. 글자와 텍스트 스타일 https://www.yalco.kr/@html-css/2-2/ */
+/* [3] CSS 기본 문법 */
+
+
+/* 1) font style & font weight */
+/* font-style 속성은 글자를 기울일 때 사용할 수 있습니다.
+
+italic과 oblique은 얼핏 보면 비슷한데
+italic이 '기울여서 쓴' 서체라면
+oblique는 본래 서체를 기울여놓은 것입니다.
+
+서체마다 둘 다 있거나 한 쪽만 있거나 둘 다 없을 수도 있는데
+이들은 한쪽이 없을 시 상호 교차되어 사용됩니다. */
+
+
+/* font-weight 속성은 글자의 굵기를 조절합니다.
+
+서체가 어떤 굵기를 지원하느냐에 따라 normal과 bold중에 선택하거나
+100~900 사이 100 단위의 수치를 사용합니다. */
+
+.style-weight {
+  /* normal, italic, oblique */
+  font-style: normal;
+
+  /* normal, bold, 100~900 */
+  font-weight: bold;
+}
+
+
+/* 2) font size & text-decoration */
+/* font-size 속성은 말 그대로 글자의 크기를 지정합니다.
+단위로는 px과 %, em, rem이 사용되죠.
+
+px는 절대값으로서 픽셀 단위입니다.
+100%는 1em으로, 이들은 부모 요소와의 상대적 크기를 나타내죠.
+rem은 html 요소와의 상대적 크기를 가지므로, 요소의 중첩에 영향을 받지 않습니다.
+pt는 1인치/72로, 프린트할 컨텐츠에 사용됩니다. */
+
+html { font-size: 14px; }
+div { font-size: 2rem; } 
+
+/* text-decoration 속성은 밑줄, 취소선, 물결선 등으로
+글을 꾸며주는데 사용됩니다.
+
+여러 꾸밈요소를 함께 사용할 수 있으며
+선의 형태, 색, 굵기 등 디테일을 지정할 수도 있습니다.
+
+아래 링크에서 상세 내용과 구성 속성들을 확인하세요.
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-decoration
+
+text-transform 속성은 알파벳의 대소문자 표시에 사용됩니다.
+HTML, CSS와 같이 대문자로 작성된 텍스트는 capitalize에 영향을 받지 않습니다. */
+
+
+.decoration {
+  text-decoration: wavy overline #b2b2ff 2px;
+
+  /* capitalize, uppercase, lowercase */
+  text-transform: lowercase;
+}
+
+
+/* 3) text-shadow */
+/* text-shadow를 사용하면 텍스트에 그림자를 줄 수 있습니다.
+
+'x좌표, y좌표, 흐림(선택), 색' 형식으로 그림자를 넣을 수 있고
+쉼표로 구분해서 여럿을 넣을 수도 있습니다.
+
+크롬 계열 브라우저의 개발자 도구를 사용하면 손쉽게 값을 조정할 수 있죠. */
+
+.shadow {
+  text-shadow:
+    /* 안쪽 흰색 그림자 */
+    1px 0 white, -1px 0 white, 0 1px white, 0 -1px white, 
+    1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white,
+
+    /* 바깥쪽 미국자두색 그림자 */
+    2px 0 plum, -2px 0 plum, 0 2px plum, 0 -2px plum,
+    2px 1px plum, -2px 1px plum, 1px 2px plum, 1px -2px plum,
+    2px -1px plum, -2px -1px plum, -1px 2px plum, -1px -2px plum,
+    2px 2px plum, 2px -2px plum, -2px 2px plum, -2px -2px plum;
 }
