@@ -183,7 +183,8 @@ rem은 html 요소와의 상대적 크기를 가지므로, 요소의 중첩에 �
 pt는 1인치/72로, 프린트할 컨텐츠에 사용됩니다. */
 
 html { font-size: 14px; }
-div { font-size: 2rem; } 
+div.middle { font-size: 2rem; } 
+div.inner { font-size: 2rem; } 
 
 /* text-decoration 속성은 밑줄, 취소선, 물결선 등으로
 글을 꾸며주는데 사용됩니다.
@@ -313,4 +314,39 @@ p {
   margin: 8px;
   display: inline-block;
   /* display: */
+}
+
+
+
+
+/* 22. 박스 모델 1 https://www.yalco.kr/@html-css/2-6/ */
+
+/* padding을 왼쪽에만 주고 싶을 때 : padding-left */
+p.special {
+  background-color: lightblue;
+  margin: 24px;
+  padding: 24px;
+}
+
+p.special {
+  margin-top: 48px;
+  /* margin-bottom: */
+  /* margin-left: */
+  /* margin-right: */
+
+  /* padding-top */
+  /* padding-bottom */
+  /* padding-left */
+  /* padding-right */
+}
+
+body {
+  text-align: left;
+}
+div.div-test {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  /* margin: 0 auto; */
 }
