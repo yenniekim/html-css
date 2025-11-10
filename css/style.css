@@ -406,3 +406,38 @@ div.gradient {
     linear-gradient(127deg, lime, transparent 90%),
     linear-gradient(336deg, blue, transparent 90%);
 }
+
+
+
+
+/* 25. 포지셔닝 https://www.yalco.kr/@html-css/2-9/  */
+
+/* static은 기본값으로, 전적으로 페이지의 흐름을 따르며
+top, bottom, left, right, z-index 속성의 영향을 받지 않습니다.
+
+relative 값은 원래 위치를 기준으로 top~right 속성값이 적용되도록 합니다.
+요소의 위치는 이동하지만 요소가 차지하는 공백의 위치는 유지됩니다.
+
+absolute 값은 static이 아닌 첫 부모 요소를 기준으로
+top~right을 사용하여 위치를 조정할 수 있습니다.
+요소는 페이지의 문서 흐름에서 벗어나, 자리를 차지하지 않게 됩니다.
+(위의 바깥쪽 div는 포지션이 relative로 되어 있습니다.)
+
+fixed는 부모 요소가 아닌 viewport를 기준으로 위치를 지정합니다.
+스크롤에 영향을 받지 않으므로, 다이얼로그 팝업처럼 움직이지 않는
+요소들에 유용하게 사용될 수 있습니다.
+
+sticky는 요소가 스크롤로 이동할 수 있는 공간을 top~right 속성으로
+제한할 수 있습니다. */
+
+body { margin: 0; }
+div.positoning {
+  width: 300px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background-color: skyblue;
+  position: fixed;
+  top: calc(50% - 40px);
+  left: calc(50% - 150px);
+}
