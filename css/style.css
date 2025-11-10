@@ -127,19 +127,19 @@ ol li:nth-child(even) {
 /* 마우스오버 가상 클래스 */
 li:hover {
 	font-weight: bold;
-	color: blue;
+	color: slateblue;
 }
 
 li:hover,
 ol li:nth-child(even):hover {
 	font-weight: bold;
-	color: blue;
+	color: slateblue;
 }
 
 li:hover,
 ol li:nth-child(odd):hover {
 	font-weight: bold;
-	color: blue;
+	color: slateblue;
 }
 
 
@@ -258,7 +258,7 @@ ul {
   list-style: url(https://showcases.yalco.kr/html-css/02-03/yalco.png) 
 }
 
-ul > li:first-child {
+.icon-star > li:first-child {
   list-style: "⭐️ "
 }
 
@@ -304,13 +304,13 @@ inline-block은 상자 안에 글자를 넣었지만 옆에 공간이 있다면 
 
 /* display 속성을 추가해서 */
 /* 이 목록을 상단바 메뉴 모습으로 바꿔보세요! */
-ul > li {
+.gnb > li {
   margin-right: 2em;
   display: inline;
   padding: 8px;
 }
 
-p {
+p.pororo {
   margin: 8px;
   display: inline-block;
   /* display: */
@@ -349,4 +349,34 @@ div.div-test {
   height: 200px;
   background-color: pink;
   /* margin: 0 auto; */
+}
+
+
+
+
+/* 23. 박스 모델 2 https://www.yalco.kr/@html-css/2-7/ */
+
+.box-model-2 > li:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+.box-model-2 > li {
+  border-bottom: 1px solid #051766;
+}
+.box-model-2 > li:last-child {
+  border-bottom: 0;
+}
+
+div.box-model-3 {
+  width: 200px;
+  height: 200px;
+  border: 5px solid blue;
+  border-radius: 12px;
+}
+
+div.box-model-4 {
+  margin: 24px auto;
+  width: 240px;
+  height: 160px;
+  border-radius: 24px;
+  box-shadow: 4px 4px 20px 4px #a7a7a720;
 }
