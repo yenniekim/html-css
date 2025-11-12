@@ -460,3 +460,56 @@ div.hide {
 
 
 
+
+/* 27. Flex 레이아웃 https://www.yalco.kr/@html-css/2-11/  */
+
+#body{ 
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#header {
+  display: flex;
+  flex-basis: 100px;
+  align-items: flex-end;
+  padding: 12px;
+  background-color: skyblue;
+  gap: 12px;
+}
+
+#header > * {
+  background-color: yellowgreen;
+  padding: 12px;
+  text-align: center;
+}
+
+#header > *:first-child {
+  flex-basis: 100px;
+}
+
+#header > *:last-child {
+  flex-grow: 1;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#content {
+  padding: 24px;
+  background-color: #597aff;
+}
+
+#footer {
+  flex-basis: 60px;
+  background-color: #ededed;
+}
+
