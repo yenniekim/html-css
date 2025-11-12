@@ -441,3 +441,22 @@ div.positoning {
   top: calc(50% - 40px);
   left: calc(50% - 150px);
 }
+
+
+
+
+/* 26. 요소들을 감추는 방법 https://www.yalco.kr/@html-css/2-10/  */
+
+/* JS를 활용해서 사용자의 조건에 따라서 보이고, 감추는 기능이 필요할 때 활용하기 위함 */
+
+div.hide {
+  padding: 24px;
+  background-color: skyblue;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+
+
