@@ -296,7 +296,7 @@ ol {
 |  | % | 부모 비율 기준 |
 |  | 200px auto | 가로 200px + 세로 자동 비율 유지 |
 
-2) 그라데이션
+**2) 그라데이션**
 
 linear-gradient(`방향`, `색상1 종료%`, `색상2 종료%`, `색상3 종료%`) 순서로 사용합니다.
 
@@ -308,3 +308,36 @@ linear-gradient(`방향`, `색상1 종료%`, `색상2 종료%`, `색상3 종료%
 |  | repeating-radial-gradient(#f69d3c, #3f87a6 50px) |
 |  | conic-gradient(#f69d3c, #3f87a6) |
 
+
+### 12. 위치
+
+| 속성 | 값 | 설명 | 언제 쓰나 |
+| --- | --- | --- | --- |
+| position | static | 아무런 포지셔닝도 하지 않은, 문서 흐름을 그대로 따르는 상태 | 따로 제어할 필요 없을 때 / 일반 텍스트·레이아웃 기본 구조 |
+|  | relative | 원래 있던 자리에서 살짝 이동시키고 싶을 때 | badge 같은 UI 뱃지 살짝 위치 조정, before / after pseudo 요소 위치 조정, absolute 자식 요소의 positioning 기준이 될 때 |
+|  | absolute | 흐름에서 빠져나오고, 특정 위치에 고정 배치 | dropdown 메뉴, dialog 내부 close 버튼, tooltip, popover |
+|  | fixed | 스크롤해도 절대 움직이지 않는 위치 | sticky, FAB, 스크롤해도 고정되는 Header, back-to-top 버튼 |
+|  | sticky | 특정 지점에 도달하면 화면에 달라붙는 방식 | 스크롤 내려도 따라오는 네비게이션, 테이블 헤더 고정, 사이드바 고정, 스크롤 프로그레스 바 |
+| z-index | auto | 0과 같음 | z-index는 'position' 있어야 작동함. `static`상태에서는 z-index가 무시됨 |
+|  | 1 | 위아래 배치 순서를 지정 | tooltip이 버튼 뒤에 가려질 때 |
+
+
+### 13. Cursor
+
+| 속성 | 값 | 설명 | 언제 쓰나 |
+| --- | --- | --- | --- |
+| cursor | auto | 기본 브라우저가 자동 선택 | 거의 대부분의 일반 요소 |
+|  | default | 기본 화살표 | 평범한 텍스트/이미지/레이아웃 요소 |
+|  | none | 커서를 숨김 | custom 커서 제작 시 |
+|  | pointer ⭐️ | 손가락 모양 👉 (클릭 가능) | button, link, tab, card 클릭 영역 등  |
+|  | zoom-in | 돋보기 🔍 | 이미지 확대/미리보기 가능 UI |
+|  | not-allowed ⭐️ | 금지 아이콘 🚫 | disabled 상태, 클릭 불가 요소 |
+
+
+### 14. 숨기기
+
+| 속성 | 값 | 공간 차지 | click / hover / focus | 언제 쓰나 |
+| --- | --- | --- | --- | --- |
+| opacity | 0 | ⭕️ | ⭕️ | fade-in / fade-out 애니메이션, 투명 처리 |
+| visibility  | hidden ↔ visible | ⭕️ | ❌ | 레이아웃 유지하며 잠시 숨길 때, 초기 상태 감춤 |
+| display | none ↔ inline-block | ❌ | ❌ | 완전히 제거할 때, 조건부 렌더링, 접근성(aria-hidden) 처리 |
