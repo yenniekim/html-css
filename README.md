@@ -2,11 +2,12 @@
 
 ### 1. CSS 적용 방법
 
-| 적용 방법 | 사용 빈도 | 상세 설명 |
+| 적용 방법 | 언제 쓰나 | 상세 설명 |
 | --- | --- | --- |
-| **인라인 스타일 (inline style)** | 거의 사용하지 않음 | HTML 태그마다 style 속성으로 CSS 코드를 넣어주는 방식입니다. 여러 요소들에 공통 속성을 재사용하여 부여할 수 없고 HTML 코드와 CSS 코드가 분리되지 않기 때문에 특별한 경우를 제외하고는 사용되지 않습니다. |
-| **내부 스타일 시트 (internal style sheet)** | 코드량이 적을 때 | head 태그 안에 style 태그를 두고 그 안에 CSS 코드를 작성하는 방식입니다. HTML과 CSS의 전체 코드량이 많지 않고 CSS가 해당 HTML 문서에서만 적용될 경우 유용하게 사용될 수 있습니다. |
-| **링킹 스타일 시트(linking style sheet)** | ⭐️ 주로 사용 | 외부의 CSS 파일을 HTML 문서에 연결하는 것입니다. HTML과 CSS의 코드가 분리되고 CSS 코드를 여러 HTML 파일에서 공통으로 사용할 수 있으므로 가장 널리 사용되는 방식입니다. |
+| **인라인 스타일 (inline style)** | 거의 안 씀 | HTML 태그 안에 직접 `style=""` 로 작성. 재사용 불가, 유지보수 어려움. 디버깅할 때 응급 패치 수준에서만 잠깐 사용 |
+| **내부 스타일 시트 (internal style sheet)** | 코드량 적음, 단일 HTML 파일 프로젝트 | `<head>` 안의 `<style>` 태그에 CSS 작성. HTML과 CSS가 같은 파일에 있어 편하지만, 문서가 커지면 유지보수 어려움 |
+| **외부 스타일 시트 (linking style sheet)** | 실전 웹 개발 전부 ⭐️ | CSS를 `.css` 파일로 분리. 여러 HTML 문서에서 공통으로 사용 가능. 구조 분리로 유지보수 최고 |
+
 
 ### 2. 선택자
 
@@ -60,6 +61,7 @@ span, .dark, #red {
   text-decoration: underline;
 }
 ```
+
 
 ### 3. 결합자와 가상 클래스
 
@@ -123,6 +125,7 @@ li:hover {
 }
 ```
 
+
 ### 4. CSS 기본 문법
 
 ```css
@@ -133,32 +136,32 @@ li:hover {
 }
 ```
 
-### 5. 글자와 텍스트 스타일
+### 5. 글자 스타일
 
-| 속성 | 값 | 목적 | 설명 |
-| --- | --- | --- | --- |
-| **font-style** | normal, italic, oblique | 글자를 기울임 | *italic*과 *oblique*은 얼핏 보면 비슷한데 italic이 '기울여서 쓴' 서체라면 oblique는 본래 서체를 기울여 놓은 것입니다. 서체마다 둘 다 있거나 한 쪽만 있거나 둘 다 없을 수도 있는데이들은 한쪽이 없을 시 상호 교차되어 사용됩니다. |
-| **font-weight** | normal or bold, 100 ~ 900 | 글자의 굵기를 조절 | 서체가 어떤 굵기를 지원하느냐에 따라 *normal*과 *bold*중에 선택하거나100~900 사이 100 단위의 수치를 사용합니다. |
-| **font-size** | px, %, em, rem | 글자의 크기를 지정 | 단위로는 *px*과 *%*, *em*, *rem을* 사용합니다. *px*는 절대값으로서 픽셀 단위입니다. *100%*는 *1em*으로, 이들은 부모 요소와의 상대적 크기를 나타내죠. *rem*은 html 요소와의 상대적 크기를 가지므로, 요소의 중첩에 영향을 받지 않습니다. *pt*는 1인치/72로, 프린트할 컨텐츠에 사용됩니다. |
-| **text-decoration** | none, underline, line-through, wavy, dotted | 밑줄, 취소선, 물결선 등으로 글을 꾸밈 | 여러 꾸밈요소를 함께 사용할 수 있으며 선의 형태, 색, 굵기 등 디테일을 지정할 수도 있습니다. |
-| **text-transform** | none, capitalize, uppercase, lowercase | 알파벳의 대소문자 표시 | HTML, CSS와 같이 대문자로 작성된 텍스트는 *capitalize*에 영향을 받지 않습니다. |
-| text-shadow | x좌표, y좌표, 흐림(선택), 색 | 텍스트에 그림자 | 'x좌표, y좌표, 흐림(선택), 색' 형식으로 그림자를 넣을 수 있고 쉼표로 구분해서 여럿을 넣을 수도 있습니다. |
+| 속성 | 값 | 목적 |
+| --- | --- | --- |
+| **font-style** | normal, italic, oblique | 글자를 기울임 |
+| **font-weight** | normal or bold, 100 ~ 900 | 글자의 굵기를 조절 |
+| **font-size** | px, %, em, rem | 글자의 크기를 지정 |
+| **text-decoration** | none, underline, line-through, wavy, dotted | 밑줄, 취소선, 물결선 등으로 글을 꾸밈 |
+| **text-transform** | none, capitalize, uppercase, lowercase | 알파벳의 대소문자 표시 |
+| **text-shadow** | x좌표, y좌표, 흐림(선택), 색 | 텍스트에 그림자 |
+
 
 ### 6. 문단 스타일
 
-| **속성** | 값 | 목적 |
+| 속성 | 값 | 목적 |
 | --- | --- | --- |
 | **text-align** | left, right, center, justify | 글자를 기울일 때 사용 |
-| **letter-spacing** | (px, %, em, rem) | 자간 |
-| **word-spacing** | (px, %, em, rem) | 단어 간격 |
-| **line-height** | (px, %, em, rem) | 줄 높이 |
-| **text-indent** | (px, %, em, rem) | 들여쓰기 |
+| **letter-spacing** | px, %, em, rem | 자간 |
+| **word-spacing** | px, %, em, rem | 단어 간격 |
+| **line-height** | px, %, em, rem | 줄 높이 |
+| **text-indent** | px, %, em, rem | 들여쓰기 |
+
 
 ### 7. 목록 스타일
 
-ul과 ol 목록의 불릿, 숫자 스타일을 지정할 수 있습니다. ul, ol 여부와 관계없이 기호, 서수, 원하는 문자, 이모지, 심지어 이미지까지 사용할 수 있습니다.
-
-| **속성** | 값 | 목적 |
+| 속성 | 값 | 목적 |
 | --- | --- | --- |
 | **list-style (ul)** | disc, circle, square, “- “, “👉 ”, url(./yennie.png), none | 도형 리스트 스타일 지정 |
 | **list-style (ol)** | decimal, lower-alpha, upper-alpha, lower-roman, upper-roman, lower-greek | 숫자 리스트 스타일 지정 |
@@ -170,7 +173,7 @@ ul {
 
 /* li별로 지정하는 것도 가능 */
 ul > li:first-child {
-  list-style: "🚩 "
+  list-style: "🚩 ";
 }
 
 ol {
@@ -180,19 +183,95 @@ ol {
 
 ### 8. 색상 표현하기
 
-| **속성** | 값 | 분류 | 목적 |
-| --- | --- | --- | --- |
-| background-color | white, black | keyword | 지정된 색상을 사용 |
-|  | rgb(225, 225, 225) | RGB(A) | 빨강, 초록, 파랑의 광원으로 색을 혼합하는 방식이며, 끝에 알파값을 붙여서 투명도 조절 가능 |
-|  | #FFFFFF | HEX | R, G, B, Alpha 값들을 16진수 형태로 나타낸 것 |
-|  | hsl(0, 100%, 100%) | HSL(A) | 색상, 채도, 명도값 그리고 알파값을 조합한 것 |
+| 속성 | 값 | 분류 | 설명 | 언제 쓰나 |
+| --- | --- | --- | --- | --- |
+| background-color | white, black, skyblue | keyword | 기본 이름 색 | 간단한 스타일, 프로토타입 |
+|  | rgb(225, 225, 225) | RGB(A) | 빛 기반 색 표현 / 알파 가능 | 가벼운 투명도 설정 |
+|  | #FFFFFF | HEX | RGB, Alpha 값을 16진수로 표현 | 웹 전반에서 가장 보편적 |
+|  | hsl(0, 100%, 100%) | HSL(A) | 색상(Hue)·채도(Saturation)·명도(Lightness) | 브랜드 컬러 튜닝 할 때 직관적 |
+
 
 ### 9. 인라인 요소와 블록 요소
 
-**인라인 요소**는 비닐이나 랩 안에 내용물을 넣은 것과 같습니다. 일정한 바깥 형태나 껍데기 없이 페이지의 흐름에 따라 다른 텍스트나 컨텐츠와 어우러져 배치됩니다. 반면, **블록 요소**는 딱딱한 상자와도 같습니다. 사각형의 형태를 갖고 있으며 너비와 높이, 안팎의 간격을 부여받을 수 있습니다.
+- inline : 흐름 속 텍스트
+- block : 한 줄 독점 박스
+- inline-block : 두 세계의 장점만 가져간 하이브리드
 
-| **속성** | 값 | 기본 너비 | 가로 공간 | `margin` (밖 여백) | `padding` (안 여백) | `width`, `height` |
+| 속성 | 값 | 기본 너비 | 가로 공간 | margin / padding | width / height  | 언제 쓰나 |
 | --- | --- | --- | --- | --- | --- | --- |
-| display | inline | 컨텐츠 만큼 (Hug) | 공유 | ↔️ 가로만 | ↔️가로만, ↕️세로는 배경색만 | ❌ 무시 |
-|  | block | 부모의 너비만큼 (Fill) | ⭐️ 독점 | 모두 적용 | 모두 적용 | 적용 |
-|  | inline-block | 컨텐츠 만큼 (Hug) | 공유 | 모두 적용 | 모두 적용 | 적용 |
+| display | inline | 컨텐츠 만큼 (Hug) | 공유 | 가로만 ↔️  | ❌ | 링크, 텍스트 조각 |
+|  | block | 부모의 너비 (Fill) | 독점 ⭐️ | 전체 | ⭕️ | 섹션, div, 레이아웃 |
+|  | inline-block | 컨텐츠 만큼 (Hug) | 공유 | 전체 | ⭕️ | 버튼, 태그, 뱃지 |
+
+
+### 10. 박스
+
+**1) 단위**
+
+| 속성 | 값 | 사용 예시 | 설명 | 언제 쓰나 |
+| --- | --- | --- | --- | --- |
+| width, height | *%* | 50% | 부모 기준 비율 | 반응형 레이아웃 |
+|  | vw, vh | 50vw, 100vh | 뷰포트 (viewport) 기준 | 전체 화면 배너, 히어로 |
+|  | vmin | 20vmin | 더 작은 축 기준 | 정사각 로고, 아이콘 |
+|  | vmax | 20vmax | 더 큰 축 기준 | 큰 배경 텍스트, 연출 요소 |
+|  | calc() | calc(100% - 50px) | 연산 가능 | 고정 + 유동 혼합 레이아웃 |
+
+**2) 최대값 / 최솟값**
+
+| 속성 | 값 | 목적 |
+| --- | --- | --- |
+| max-width | px, %, vw/vh | 최대 가로 제한 |
+| min-width | px, %, vw/vh | 최소 가로 제한 |
+| max-height | px, %, vh 등 | 최대 높이 제한 |
+| min-height | px, %, vh 등 | 최소 높이 제한 |
+
+**3) margin과 padding** 
+
+값은 ‘북 동 남 서’로 시계 방향 ⏰으로 정의합니다.
+
+| 속성 | 값 | 설명  | 언제 쓰나 |
+| --- | --- | --- | --- |
+| **margin (밖 여백)** | px | 고정 | 컴포넌트 내부 여백 |
+|  | em | 부모의 font-size 기준 | 중첩될수록 비례 증가 |
+|  | rem* | html 기준 고정 | 접근성 대응, 반응형 기본 |
+|  | auto | 남는 공간 자동 분배 | 요소 가운데 정렬 |
+| **padding (안 여백)** | px, vmin, em 등 |  |  |
+
+**4) border**
+
+| 속성 | 값 | 설명 |
+| --- | --- | --- |
+| **border** | 2px solid #ededed | 선 두께·스타일·색 |
+| **border-top** | 1px dashed black | 속성값으로 방향 지정 가능 (border-bottom, border-left, border-bottom) |
+| **box-sizing ⭐️** | border-box ⭐️ | padding과 border 값 포함 |
+|  | content-box | padding과 border 값 미포함 |
+| **border-radius** | px, em, % | 둥글게 |
+
+
+**5) overflow**
+
+부모 박스보다 자식이 커져서 튀어나올 때 그 튀어나온 부분을 어떻게 보여줄지 결정하는 속성입니다.
+
+| 속성 | 값 | 설명 | 언제 쓰나 |
+| --- | --- | --- | --- |
+| **overflow** | visual | 넘쳐도 보임 | 기본값 |
+|  | hidden | 잘라버림 | thumbnail mask |
+|  | scroll | 항상 스크롤 표시 | 긴 리스트 |
+|  | auto | 필요할 때만 스크롤 | modal 콘텐츠 |
+| **overflow-x** | visual, hidden, auto, scroll |  |  |
+| **overflow-y** | visual, hidden, auto, scroll |  |  |
+
+
+**6) box-shadow**
+
+`inset 여부 | offset-x | offset-y | blur | spread | color` 순서로 사용합니다. text-shadow에 spread 값과 inset 여부(안쪽 그림자)가 추가된 방식입니다.
+
+| 속성 | 값 | 설명 |
+| --- | --- | --- |
+| box-shadow | inset | 안쪽 그림자 |
+|  | offset-x | offset-y | 그림자 이동 |
+|  | blur | 번짐 정도 |
+|  | spread | 그림자의 크기 |
+
+
+### 11. 배경
