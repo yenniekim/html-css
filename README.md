@@ -264,7 +264,7 @@ ol {
 
 **6) box-shadow**
 
-`inset 여부 | offset-x | offset-y | blur | spread | color` 순서로 사용합니다. text-shadow에 spread 값과 inset 여부(안쪽 그림자)가 추가된 방식입니다.
+`inset 여부 | offset-x | offset-y | blur | spread | color` 순서로 사용합니다.
 
 | 속성 | 값 | 설명 |
 | --- | --- | --- |
@@ -273,5 +273,3 @@ ol {
 |  | blur | 번짐 정도 |
 |  | spread | 그림자의 크기 |
 
-
-### 11. 배경
