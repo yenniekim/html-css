@@ -173,6 +173,8 @@ input[type="email"]:not(:valid) {
 .no-focus:focus {
   outline: none;
 }
+
+
 /* 탭으로 포커스된 요소에 적용 */
 /* 브라우저 지원 확인 */
 [class*="tab-focus"]:focus-visible {
@@ -235,6 +237,7 @@ span[class^="vege"] {
 span[class$="-1"] {
   font-weight: bold;
 }
+```
 
 ### 4. CSS 기본 문법
 
