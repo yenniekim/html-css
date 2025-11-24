@@ -498,7 +498,7 @@ flex: 1 1 200px;
 
 
 ### 16. 상속과 리셋
-- inherit : 스스로의 값을 포기하고 부모로부터 받은 상속값을 적용합니다.
+inherit : 스스로의 값을 포기하고 부모로부터 받은 상속값을 적용합니다.
 
 ```css
 .parent {
@@ -509,10 +509,52 @@ flex: 1 1 200px;
 .parent > :last-child { color: inherit; }
 ```
 
-- initial : 브라우저가 부여한 값을 포기하고 각 속성의 초기값을 적용합니다.
+initial : 브라우저가 부여한 값을 포기하고 각 속성의 초기값을 적용합니다.
 
 ```css
 p:not(:first-child) {
   display: initial;
+}
+```
+
+unset : 상속되는 값이 있다면 inherit, 없다면 initial처럼 작동합니다.
+
+```css
+.parent { color: slateblue; }
+.parent > div { color: olivedrab; }
+.parent :last-child { color: unset; }
+
+p:not(:first-child) {
+  display: unset;
+}
+```
+
+revert : unset과 같지만, 상속받지 않은 값을 초기값으로 되돌리지는 않습니다.
+
+```css
+.parent { color: slateblue; }
+.parent > div { color: olivedrab; }
+.parent :last-child { color: revert; }
+
+p:not(:first-child) {
+  display: revert;
+}
+```
+
+all 속성 : 대부분의 속성을 inherit, initial, unset, revert값으로 지정할 수 있습니다. 브라우저에서 지정한 기본값을 비우고 원하는 스타일로 초기화하는데 유용합니다.
+
+```css
+.parent { color: slateblue; }
+
+button:not(:first-of-type) {
+  all: unset;
+}
+button:last-child {
+  padding: 0.6em 1em;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 0.4em;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.16);
 }
 ```
