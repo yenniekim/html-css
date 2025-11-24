@@ -496,3 +496,23 @@ flex: 1 1 200px;
 | flex-shrink | 부족 시, **줄어들기** | 숫자 (0,1,2…) | 공간이 모자랄 때 얼마나 많이 줄어들지 | 중요한 요소는 덜 줄이고, 덜 중요한 건 더 줄일 때 |
 | order | 표시 순서 변경 | 숫자 (-1, 0,1,2…) | 숫자가 작을수록 먼저 배치됨 | 반응형에서 순서 바꾸기, PC/모바일 UI 재정렬, 디자인/개발 순서 괴리 해결 |
 
+
+### 16. 상속과 리셋
+- inherit : 스스로의 값을 포기하고 부모로부터 받은 상속값을 적용합니다.
+
+```css
+.parent {
+  font-weight: bold;
+  color: slateblue;
+}
+.parent > div { color: olivedrab; }
+.parent > :last-child { color: inherit; }
+```
+
+- initial : 브라우저가 부여한 값을 포기하고 각 속성의 초기값을 적용합니다.
+
+```css
+p:not(:first-child) {
+  display: initial;
+}
+```
