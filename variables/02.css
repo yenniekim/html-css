@@ -25,3 +25,35 @@ p {
   color: var(--color-text);
 }
 
+/* 속성 값을 기준으로 선택 */
+a[href="https://www.yalco.kr"] {
+  color: #ff4e00;
+  font-weight: bold;
+}
+
+
+/* 34. 선택자 심화 */
+
+/* 특정 속성이 있는 요소 선택 */
+input[disabled]+label {
+  color: lightgray;
+  text-decoration: line-through;
+}
+
+/* 속성값이 특정 텍스트를 포함하는 요소 */
+span[class*="item"] {
+  text-decoration: underline;
+}
+
+/* 속성값이 특정 텍스트로 시작하는 요소 */
+span[class^="fruit"] {
+  color: tomato;
+}
+span[class^="vege"] {
+  color: olivedrab;
+}
+
+/* 속성값이 특정 텍스트로 끝나는 요소 */
+span[class$="-1"] {
+  font-weight: bold;
+}
