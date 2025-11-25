@@ -264,11 +264,12 @@ span[class$="-1"] {
 | **text-transform** | none, capitalize, uppercase, lowercase | 알파벳의 대소문자 표시 |
 | **text-shadow** | x좌표, y좌표, 흐림(선택), 색 | 텍스트에 그림자 |
 
-**2) 문장**
+**2) 요소 내 글자**
 | 속성 | 값 | 목적 |
 | --- | --- | --- |
 | **vertical-align** | middle, top, bottom, baseline | inline 요소 안에서와 table-cell 요소 안에서의 정렬 |
 | **white-space** | normal, nowarp, pre | 요소 내 공백과 줄바꿈들이 처리되는 방식 |
+| **text-overflow** | clip, ellipsis | 글자가 상자의 너비를 넘어갈 때 말줄임 처리 |
 
 ### 6. 문단 스타일
 
