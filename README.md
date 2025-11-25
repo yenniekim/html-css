@@ -123,8 +123,121 @@ li:hover {
   font-weight: bold;
   color: blue;
 }
+
+/* 마우스오버 */
+a:hover {
+  background-color: yellow;
+}
+/* 클릭중 */
+a:active {
+  background-color: aqua;
+}
+
+/* 체크된 것 */
+input[type=radio]:checked+label {
+  color: tomato;
+  font-weight: bold;
+}
+/* 활성화된 것 */
+input[type=radio]:enabled+label {
+  text-decoration: underline;
+}
+/* 비활성화된 것 */
+input[type=radio]:disabled+label {
+  color: lightgray;
+  text-decoration: line-through;
+}
+
+/* 인풋 등이 클릭되어 포커스된(입력을 받는) 상태 */
+input[type="text"]:focus {
+  /* border 밖의 선 (박스 요소가 아님) */
+  outline: 2px solid dodgerblue;
+}
+/* 필수 입력요소 */
+input:required {
+  border-color: orangered;
+}
+/* 값이 유효한 입력요소 */
+input[type="email"]:valid {
+  border-color: green;
+}
+/* 값이 무효한 입력요소 */
+input[type="email"]:not(:valid) {
+  border-color: purple;
+}
+
+[class*="focus"]:focus {
+  outline: 2px solid deeppink;
+}
+.tab-focus:focus,
+.no-focus:focus {
+  outline: none;
+}
+
+
+/* 탭으로 포커스된 요소에 적용 */
+/* 브라우저 지원 확인 */
+[class*="tab-focus"]:focus-visible {
+  outline: 2px solid dodgerblue;
+}
+
+/* 부모 요소 내 첫 번째 ~요소 */
+b:first-of-type {
+  text-decoration: overline;
+}
+/* 부모 요소 내 마지막 ~요소 */
+i:last-of-type {
+  text-decoration: line-through;
+}
+/* 부모 요소 내 N번째 ~요소 */
+b:nth-of-type(2) {
+  text-decoration: underline;
+}
+
+/* 부모 요소 내 유일한 ~요소 */
+div :only-of-type {
+  text-decoration: overline line-through underline;
+}
+/* 부모 요소 내 종류 무관 유일한 요소 (독자) */
+div :only-child {
+  text-decoration: wavy underline tomato;
+}
+
 ```
 
+**3) 특정 선택자**
+
+```css
+/* 속성 값을 기준으로 선택 */
+a[href="https://www.yalco.kr"] {
+  color: #ff4e00;
+  font-weight: bold;
+}
+
+/* 특정 속성이 있는 요소 선택 */
+input[disabled]+label {
+  color: lightgray;
+  text-decoration: line-through;
+}
+
+/* 속성값이 특정 텍스트를 포함하는 요소 */
+span[class*="item"] {
+  text-decoration: underline;
+}
+
+/* 속성값이 특정 텍스트로 시작하는 요소 */
+span[class^="fruit"] {
+  color: tomato;
+}
+span[class^="vege"] {
+  color: olivedrab;
+}
+
+/* 속성값이 특정 텍스트로 끝나는 요소 */
+span[class$="-1"] {
+  font-weight: bold;
+}
+```
 
 ### 4. CSS 기본 문법
 
@@ -136,7 +249,11 @@ li:hover {
 }
 ```
 
+
+
 ### 5. 글자 스타일
+
+**1) 글자**
 
 | 속성 | 값 | 목적 |
 | --- | --- | --- |
@@ -147,6 +264,12 @@ li:hover {
 | **text-transform** | none, capitalize, uppercase, lowercase | 알파벳의 대소문자 표시 |
 | **text-shadow** | x좌표, y좌표, 흐림(선택), 색 | 텍스트에 그림자 |
 
+**2) 요소 내 글자**
+| 속성 | 값 | 목적 |
+| --- | --- | --- |
+| **vertical-align** | middle, top, bottom, baseline | inline 요소 안에서와 table-cell 요소 안에서의 정렬 |
+| **white-space** | normal, nowarp, pre | 요소 내 공백과 줄바꿈들이 처리되는 방식 |
+| **text-overflow** | clip, ellipsis | 글자가 상자의 너비를 넘어갈 때 말줄임 처리 |
 
 ### 6. 문단 스타일
 
@@ -381,3 +504,66 @@ flex: 1 1 200px;
 | flex-shrink | 부족 시, **줄어들기** | 숫자 (0,1,2…) | 공간이 모자랄 때 얼마나 많이 줄어들지 | 중요한 요소는 덜 줄이고, 덜 중요한 건 더 줄일 때 |
 | order | 표시 순서 변경 | 숫자 (-1, 0,1,2…) | 숫자가 작을수록 먼저 배치됨 | 반응형에서 순서 바꾸기, PC/모바일 UI 재정렬, 디자인/개발 순서 괴리 해결 |
 
+
+### 16. 상속과 리셋
+
+inherit : 스스로의 값을 포기하고 부모로부터 받은 상속값을 적용합니다.
+
+```css
+.parent {
+  font-weight: bold;
+  color: slateblue;
+}
+.parent > div { color: olivedrab; }
+.parent > :last-child { color: inherit; }
+```
+
+initial : 브라우저가 부여한 값을 포기하고 각 속성의 초기값을 적용합니다.
+
+```css
+p:not(:first-child) {
+  display: initial;
+}
+```
+
+unset : 상속되는 값이 있다면 inherit, 없다면 initial처럼 작동합니다.
+
+```css
+.parent { color: slateblue; }
+.parent > div { color: olivedrab; }
+.parent :last-child { color: unset; }
+
+p:not(:first-child) {
+  display: unset;
+}
+```
+
+revert : unset과 같지만, 상속받지 않은 값을 초기값으로 되돌리지는 않습니다.
+
+```css
+.parent { color: slateblue; }
+.parent > div { color: olivedrab; }
+.parent :last-child { color: revert; }
+
+p:not(:first-child) {
+  display: revert;
+}
+```
+
+all 속성 : 대부분의 속성을 inherit, initial, unset, revert값으로 지정할 수 있습니다. 브라우저에서 지정한 기본값을 비우고 원하는 스타일로 초기화하는데 유용합니다.
+
+```css
+.parent { color: slateblue; }
+
+button:not(:first-of-type) {
+  all: unset;
+}
+button:last-child {
+  padding: 0.6em 1em;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 0.4em;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.16);
+}
+```
