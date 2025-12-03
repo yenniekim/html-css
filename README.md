@@ -1,7 +1,6 @@
 # HTML & CSS 
 
-Product Designer의 HTLM & CSS 공부 노트
-
+Product Designer의 HTML & CSS 공부 노트
 
 ### Content
 
