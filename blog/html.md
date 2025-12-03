@@ -259,10 +259,10 @@ input은 사용자가 값을 직접 입력하거나 선택할 수 있도록 하�
 |  | (UX 강화용) | color | 컬러 피커, 색상 선택 UI 제공 |
 |  |  | hidden | 화면에 표시되지 않음, 데이터를 숨겨서 전송할 때 |
 |  | placeholder | `{글자}` | 빈 칸에 보이는 안내문 |
-|  | readonly |  |  |
-|  | autofocus |  |  |
-|  | required |  |  |
-|  | disabled |  |  |
+|  | readonly |  | 입력창이 읽기만 가능하고 사용자 편집은 불가하지만, 폼 전송은 가능한 상태 |
+|  | autofocus |  | 페이지 로드 시 해당 input에 자동으로 포커스(커서)가 이동 |
+|  | required |  | 필드 미입력 시, 폼 제출이 차단되는 필수 입력 필드 |
+|  | disabled |  | input이 완전히 비활성화되며 클릭/포커스/수정 모두 불가, 폼 전송도 제외 |
 |  | checked |  | `checkbox` 및 `radio`에서 사전 선택을 정의 |
 |  | maxlength | `{정수}` | 최대 길이 |
 |  | minlength | `{정수}` | 최소 길이. 위반 시 submit 거부 |
