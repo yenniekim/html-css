@@ -1,16 +1,14 @@
-# HTML
-
 ### List
 
 여러 항목을 구조적으로 나열해 콘텐츠를 그룹화하고, 정보의 위계·순서를 명확하게 전달하는 역할을 합니다.
 
-| Element | Attribute | Description |
-| --- | --- | --- |
-| ul |  | unordered list, 순서가 없는 목록 |
-| ol |  | ordered list, 순서가 있는 목록 |
-|  | type | 1, I, i, A, a 등 다양한 타입 선택 가능 |
-|  | start | 1~ 시작 지점 선택 가능 |
-| li |  | list item, 목록 아이템. `ul`, `ol` 태그의 1촌 자식으로 이 태그만 가능 |
+| Element | Attribute |  | Description |
+| --- | --- | --- | --- |
+| ul |  |  | unordered list, 순서가 없는 목록 |
+| ol |  |  | ordered list, 순서가 있는 목록 |
+|  | type | 1, I, i, A, a | 등 다양한 타입 선택 가능 |
+|  | start | `{정수}` | 1~ 시작 지점 선택 가능 |
+| li |  |  | list item, 목록 아이템. `ul`, `ol` 태그의 1촌 자식으로 이 태그만 가능 |
 
 ```html
 <ol>
@@ -59,21 +57,21 @@
 
 행(row)과 열(column) 구조로 데이터를 표 형태로 정렬·표현하는 요소이며, 표는 왼쪽에서 오른쪽 ➡️ 위에서 아래 ⬇️ 순으로 채웁니다.
 
-| Element | Attribute | Description |
-| --- | --- | --- |
-| table |  | 표 전체를 감싸는 태그 |
-| caption |  | 표의 제목 또는 설명 (선택 사항) |
-| thead |  | 헤더 부분으로 각 기둥 제목 |
-| tbody |  | 실제 데이터 부분 |
-| tfoot |  | 합계, 요약 같은 마지막 부분 |
-| tr |  | table row, 가로 한 줄 |
-| th | scope | table header, 헤더 셀로 제목 역할. `scope` 속성으로 `row`, `col` 중 선택  |
-| td | scope | table data, 일반 데이터 셀 |
-|  | colspan | column span, 열 (세로) 병합 |
-|  | rowspan | row span, 행 (가로) 병합 |
-| colgroup |  | 열 단위로 스타일을 주고 싶을 때 사용. `caption` 보다 뒤, 그 외 요소보다 앞에 와야 함 |
-| col | span | column, 각 열 하나. `span` 속성으로 범위 지정 |
-|  | class | `class` 속성을 통해 CSS에서 스타일 지정 |
+| Element | Attribute | Attribute value | Description |
+| --- | --- | --- | --- |
+| table |  |  | 표 전체를 감싸는 태그 |
+| caption |  |  | 표의 제목 또는 설명 (선택 사항) |
+| thead |  |  | 헤더 부분으로 각 기둥 제목 |
+| tbody |  |  | 실제 데이터 부분 |
+| tfoot |  |  | 합계, 요약 같은 마지막 부분 |
+| tr |  |  | table row, 가로 한 줄 |
+| th | scope | row, col | table header, 헤더 셀로 제목 역할. 범위 지정 |
+| td | scope | row, col | table data, 일반 데이터 셀. 범위 지정 |
+|  | colspan | `{정수}` | column span, 열 (세로) 병합 |
+|  | rowspan | `{정수}` | row span, 행 (가로) 병합 |
+| colgroup |  |  | 열 단위로 스타일을 주고 싶을 때 사용. `caption` 보다 뒤, 그 외 요소보다 앞에 와야 함 |
+| col | span | `{정수}` | column, 각 열 하나. `span` 속성으로 범위 지정 |
+|  | class | `{글자}` | `class` 속성을 통해 CSS에서 스타일 지정 |
 
 **셀 병합**
 
@@ -235,7 +233,7 @@ input은 사용자가 값을 직접 입력하거나 선택할 수 있도록 하�
 | input  | id ⭐ | `{글자}` | 입력창. 브라우저가 읽는 이름, HTML 안에서 특정할 수 있는 고유 이름. CSS & JS 처리 시 필요. `label for`과 연결할 때 사용 (브라우저 문서 기준) |
 |  | name | `{글자}` | 서버가 읽는 데이터의 이름 (서버 데이터 단위 기준) |
 |  | value | `{글자}` | 서버에 전송되는 실제 데이터 값  |
-|  | type (텍스트) ⭐⭐ | text | 일반 텍스트 입력, 기본 입력 필드. 한 줄 텍스트 |
+|  | type ⭐⭐ (텍스트) | text | 일반 텍스트 입력, 기본 입력 필드. 한 줄 텍스트 |
 |  |  | password | 비밀번호 입력, 입력값을 •••로 마스킹 |
 |  |  | search | 검색창, 브라우저 기본 clear 버튼 제공 |
 |  |  | email | 이메일 형식 입력, 모바일에서 @ 키패드 노출 (이메일 형식 자동 검증) |
@@ -269,7 +267,7 @@ input은 사용자가 값을 직접 입력하거나 선택할 수 있도록 하�
 | button | type | button | 기본 동작 없는 버튼 |
 |  |  | reset | 초기화 |
 |  |  | submit | 제출  |
-| fieldset |  |  | form 태그 내 여러 입력요소와 label의 그룹화. CSS로 수정 가능. fieldset 바로 뒤 disabled, 이후 입력요소 비활성화 |
+| fieldset |  |  | form 태그 내 여러 입력요소와 label의 그룹화. CSS로 수정 가능 |
 | legend |  |  | 필드셋 요소의 제목 또는 설명 |
 
 ```html
@@ -397,6 +395,122 @@ input은 사용자가 값을 직접 입력하거나 선택할 수 있도록 하�
 
 ```
 
+### 그 외 form 요소
+
+일반 웹 페이지에서는 input/textarea/select는 form 안에 넣어야 합니다. 단, React 같은 SPA 코드에서는 form 없이도 API 호출로 처리 가능합니다.
+
+**textarea**
+
+여러 줄의 텍스트를 입력받을 때 사용하는 폼 요소입니다. 댓글, 설명, 메모 입력 등에 사용됩니다. CSS로 크기를 조절하는 경우 cols/rows는 무시되어도 상관 없습니다.
+
+| Element | Attribute | Attribute value | Description |
+| --- | --- | --- | --- |
+| textarea | id | `{글자}` | 요소 식별자(ID). label과 연결하거나 JS/CSS에서 사용 |
+|  | name | `{글자}`  | 서버로 보낼 데이터의 key (필수) |
+|  | cols | `{숫자}` | 가로 글자 수 기준으로 보이는 너비 지정 |
+|  | rows | `{숫자}` | 세로 줄 수 기준으로 보이는 높이 지정 |
+
+```html
+<form action="/submit" method="post">
+
+  <!-- textarea -->
+  <label for="comment">댓글</label>
+  <textarea
+    id="comment"
+    name="comment"
+    cols="40"
+    rows="4"
+  ></textarea>
+  
+</form>
+```
+
+**option**
+
+드롭다운 목록이나 자동완성 리스트를 만들 때 사용하는 요소입니다.
+
+| Element | Attribute | Attribute value | Description |
+| --- | --- | --- | --- |
+| select | id | `{글자}` | 드롭다운 전체 |
+|  | name | `{글자}` |  |
+| optgroup | label | `{글자}` | 옵션을 그룹으로 묶는 용도 |
+| option | value | `{글자}` | 실제 선택 항목 |
+| datalist | id | `{글자}` | `<datalist>` → `<input>`의 자동완성 후보 리스트 제공. `<input list="id">`와 연결하여 자동완성 제공 |
+
+```html
+<form action="/submit" method="post">
+  
+  <!-- select + optgroup + option -->
+  <label for="country">국가 선택</label>
+  <select id="country" name="country">
+    <optgroup label="Asia">
+      <option value="kr">South Korea</option>
+      <option value="jp">Japan</option>
+      <option value="cn">China</option>
+    </optgroup>
+
+    <optgroup label="Europe">
+      <option value="fr">France</option>
+      <option value="uk">United Kingdom</option>
+    </optgroup>
+  </select>
+
+  <!-- input + datalist (자동완성) -->
+  <label for="browser">브라우저 선택</label>
+  <input id="browser" name="browser" list="browser-list" />
+
+  <datalist id="browser-list">
+    <option value="Chrome"></option>
+    <option value="Safari"></option>
+    <option value="Firefox"></option>
+    <option value="Edge"></option>
+  </datalist>
+  
+</form>
+```
+
+**progress & meter**
+
+상태 표시 요소입니다.
+
+| Element | Attribute | Attribute value | Description |
+| --- | --- | --- | --- |
+| progress | id | `{글자}` | 다운로드, 업로드, 처리 단계 등 정해진 목표를 향해 얼마나 진행됐는지 표시 |
+|  | max | `{정수}` | 전체 목표 값 |
+|  | value | `{글자}` | 현재 진행도 |
+| meter |  | `{정수}` | “좋음/보통/나쁨” 같은 구간 기반의 상태를 표현할 때 사용 (예: 배터리 잔량, 설문점수, 리스크 레벨 등) |
+|  | min · max | `{정수}` | 전체 범위 |
+|  | optimum | `{정수}` | 가장 이상적인 구간 |
+|  | value | `{정수}` | 현재 수치 |
+|  | low · high | `{정수}` | 구간 기준 |
+
+```html
+<form action="/submit" method="post">
+  
+  <!-- progress (진행률 표시) -->
+  <label for="download">다운로드 진행률</label>
+  <progress id="download" value="40" max="100">
+    40%
+  </progress>
+
+  <!-- meter (값의 수준 표시) -->
+  <label for="battery">배터리 잔량</label>
+  <meter
+    id="battery"
+    value="0.4"
+    min="0"
+    max="1"
+    low="0.3"
+    high="0.7"
+    optimum="0.8"
+  ></meter>
+
+  <!-- 제출 버튼 -->
+  <button type="submit">제출하기</button>
+
+</form>
+```
+
 **👉 input 태그 id & name & value 비교**
 
 id와 name은 목적이 다르므로 동일하게 사용하지 않습니다. 두 값을 분리해 작성하면 UI 로직과 서버 로직 간 의존성을 줄여 유지보수 시 오류를 방지할 수 있습니다.
@@ -410,3 +524,52 @@ id와 name은 목적이 다르므로 동일하게 사용하지 않습니다. 두
     - 폼 데이터를 서버로 전송할 때 사용되는 데이터 키입니다.
     - 서버가 요청 값을 읽을 때 기준이 되는 값으로, 동일한 name을 여러 input에서 공유할 수 있습니다(예: radio 그룹).
     - 서버 데이터 구조나 API 스펙 변경에 따라 수정될 수 있습니다.
+
+| Attribute | For | Where | What | Example |
+| --- | --- | --- | --- | --- |
+| **id** | 브라우저 UI가 input을 식별하기 위한 값 | label → for, CSS & JS | 화면 구성 요소를 특정하는 고유 ID | `id="onewayOption"` |
+| **name** | 서버가 데이터를 받을 때 key | form submit 시 서버 | 서버 데이터 구조/API 명세에 맞춘 필드 키 | `name="itinerary"` |
+| **value** | 서버에 전달되는 실제 데이터 | form submit 시 서버 | input이 선택되거나 입력된 값 | `value="oneway"` |
+
+### 빈 태그
+
+| Element | Attribute | Attribute value | Description |
+| --- | --- | --- | --- |
+| div | class | `{정수}` | block 요소,  한 줄을 전체 차지하는 박스. 레이아웃(구조)를 잡는 용도로 사용 |
+| span | class | `{정수}`  | inline 요소, 문장 안에서 특정 텍스트에 스타일을 주고 싶을 때 |
+
+**div & span 비교**
+
+| Element | Display | When | Width Height 적용 | line break |
+| --- | --- | --- | --- | --- |
+| div | block | 레이아웃 구조,  큰 박스 | 🟢 | 자동 줄바꿈 |
+| span | inline | 텍스트 내부의 작고 세밀한 스타일링 | ❌ | 줄 안에서 계속 이어짐 |
+
+```html
+<!-- div -->
+<div class="card">
+  <div class="title">타이틀</div>
+  <div class="content">내용</div>
+</div>
+```
+
+```html
+<!-- span -->
+<!-- 문장 안에서 특정 텍스트에 스타일을 주고 싶을 때 -->
+<p>
+  이 문장 안에 <span class="highlight">중요한 부분</span>을 표시합니다.
+</p>
+
+<!-- 텍스트 안에서 버튼 처럼 보이게 -->
+<span class="tag">New</span>
+```
+
+```css
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #005ce6;
+  color: white;
+  border-radius: 6px;
+}
+```
